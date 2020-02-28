@@ -1,3 +1,7 @@
+#In this file a health data is dowloaded and processed. The aim is to show imputing missing data with SoftImpute. 
+#This file is almost filled, so to test the method, the data is filled with Nan's randomly. Then the new data is imputed. 
+#In this way we can find the error.
+#Root Square Mean Error (RSME) is calculated and compared with the standard deviation of the original file.
 
 import numpy as np
 import pandas as pd
@@ -6,7 +10,7 @@ from fancyimpute import SoftImpute, BiScaler
 
 #Community Health Status Indicators (CHSI) to Combat Obesity, Heart Disease and Cancer
 #https://healthdata.gov/dataset/community-health-status-indicators-chsi-combat-obesity-heart-disease-and-cancer
-df0 = pd.read_csv("/Users/curtis/Desktop/Data Science/Medical/data/SUMMARYMEASURESOFHEALTH.csv")
+df0 = pd.read_csv("../Data Science/Medical/data/SUMMARYMEASURESOFHEALTH.csv")
 
 #some columns are relevant for our purpose, these are mostly constant variables, most of them are not numeric
 drop_columns=['State_FIPS_Code', 'County_FIPS_Code', 'CHSI_County_Name',
